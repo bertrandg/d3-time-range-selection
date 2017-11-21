@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="vendor/d3.js"></script>
+        <script src="vendor/lodash.min.js"></script>
+    </head>
+    <body>
+        <svg></svg>
+        <script src="app.js"></script>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+            }
+            .curveAll {
+                fill: steelblue;
+                clip-path: url(#clipAll);
+            }
+            .curveSelection {
+                fill: brown;
+                clip-path: url(#clipSelection);
+            }
+
+            .zoom {
+                cursor: move;
+                fill: none;
+                pointer-events: all;
+            }
+        </style>
+    </body>
+</html>

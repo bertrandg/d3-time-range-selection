@@ -1,0 +1,23 @@
+{
+  "name": "d3-time-range-selection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bertrandg/d3-time-range-selection.git"
+  },
+  "author": "bertrandg <bertrandgaillard@hotmail.fr> (https://github.com/bertrandg)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bertrandg/d3-time-range-selection/issues"
+  },
+  "homepage": "https://github.com/bertrandg/d3-time-range-selection#readme",
+  "dependencies": {
+    "d3": "^4.11.0",
+    "lodash": "^4.17.4"
+  }
+}
