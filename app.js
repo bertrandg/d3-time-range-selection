@@ -222,21 +222,18 @@ function build() {
 }
 
 function rounded_rect(x, y, w, h, r, tl, tr, bl, br) {
-    var retval = "M" + (x + r) + "," + y;
-    retval += "h" + (w - 2*r);
-    if (tr) { retval += "a" + r + "," + r + " 0 0 1 " + r + "," + r; }
-    else { retval += "h" + r; retval += "v" + r; }
-    retval += "v" + (h - 2*r);
-    if (br) { retval += "a" + r + "," + r + " 0 0 1 " + -r + "," + r; }
-    else { retval += "v" + r; retval += "h" + -r; }
-    retval += "h" + (2*r - w);
-    if (bl) { retval += "a" + r + "," + r + " 0 0 1 " + -r + "," + -r; }
-    else { retval += "h" + -r; retval += "v" + -r; }
-    retval += "v" + (2*r - h);
-    if (tl) { retval += "a" + r + "," + r + " 0 0 1 " + r + "," + -r; }
-    else { retval += "v" + -r; retval += "h" + r; }
-    retval += "z";
-    return retval;
+    let v = `M${ (x + r) },${ y }
+             h${ (w - 2*r) }`;
+    v += (tr === true) ? `a${ r },${ r } 0 0 1 ${ r },${ r }` : `h${ r }v${ r }`;
+    v += `v${ (h - 2*r) }`;
+    v += (br === true) ? `a${ r },${ r } 0 0 1 ${ -r },${ r }` : `v${ r }h${ -r }`;
+    v += `h${ (2*r - w) }`;
+    v += (bl === true) ? `a${ r },${ r } 0 0 1 ${ -r },${ -r }` : `h${ -r }v${ -r }`;
+    v += `v${ (2*r - h) }`;
+    v += (tl === true) ? `a${ r },${ r } 0 0 1 ${ r },${ -r }` : `v${ -r }h${ r }`;
+    v += `z`;
+    
+    return v;
 }
 
 
