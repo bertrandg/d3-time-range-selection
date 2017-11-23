@@ -334,6 +334,11 @@ function zoomed() {
  
     var t = d3.event.transform;
 
+    // Avoid bug 'no selection' and handles at top left
+    if(Math.abs(t.k) === Infinity || Math.abs(t.x) === Infinity || isNaN(t.y)) {
+        return;
+    }
+
 const dd = xAll.domain();
 const dd2 = t.rescaleX(xAll).domain();
 console.group('ZOOMED');
@@ -404,7 +409,6 @@ window.onload = function() {
     resizeHandler();
 
     d3.json('data.json', function(error, d) {
- console.log("d ", d);
         // Aggregate nb points per seconds
 
         let lastTimestampInserted = null;
