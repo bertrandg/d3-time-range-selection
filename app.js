@@ -198,7 +198,7 @@ function build() {
     gAxisAllX.attr('transform', 'translate(0,' + sizes.all.height + ')');
     gAxisSelectionX.attr('transform', 'translate(0,' + sizes.selection.height + ')');
 
-    pathHandles.attr('d', function rightRoundedRect(d, i) {
+    pathHandles.attr('d', (d, i) => {
         const width = 25;
         const height = sizes.all.height/4;
         const radius = 8;
